@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.63",
+    "@mui/material": "^5.2.7",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "@mui/styled-engine-sc": "^5.1.0",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -12,11 +17,20 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
+    "ethers": "^5.5.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.0",
+    "react-router": "^6.2.1",
     "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
     "typescript": "~4.1.5"
+  },
+  "resolutions": {
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +40,17 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [

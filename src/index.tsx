@@ -5,6 +5,9 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { Login } from './features/login/Login.container';
+
+(BigInt.prototype as any).toJSON = function() { return this.toString()  }
 
 ReactDOM.render(
   <React.StrictMode>
