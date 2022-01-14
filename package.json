@@ -47,11 +47,6 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"[Husky] pr-commit\""
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
