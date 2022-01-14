@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 
 export async function getHistory(account: string) {
   let provider = new ethers.providers.EtherscanProvider();

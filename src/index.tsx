@@ -7,7 +7,9 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { Login } from './features/login/Login.container';
 
-(BigInt.prototype as any).toJSON = function() { return this.toString()  }
+(BigInt.prototype as any).toJSON = function () {
+  return this.toString();
+};
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +17,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

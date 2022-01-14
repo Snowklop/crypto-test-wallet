@@ -1,15 +1,15 @@
-import { LoadingButton } from "@mui/lab";
-import { CircularProgress, Grid } from "@mui/material";
-import { ethers } from "ethers";
-import { useCallback, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { LoadingButton } from '@mui/lab';
+import { CircularProgress, Grid } from '@mui/material';
+import { ethers } from 'ethers';
+import { useCallback, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   checkWalletAsync,
   selectHasExtension,
   selectIsConnecting,
   selectIsLoading,
   connectWalletAsync,
-} from "./loginSlice";
+} from './loginSlice';
 
 declare global {
   interface Window {
@@ -32,11 +32,7 @@ export const Login = () => {
   }, [dispatch]);
 
   let content = (
-    <LoadingButton
-      loading={isConnecting}
-      onClick={handleConnectWallet}
-      variant="outlined"
-    >
+    <LoadingButton loading={isConnecting} onClick={handleConnectWallet} variant="outlined">
       Connect wallet
     </LoadingButton>
   );
@@ -55,7 +51,7 @@ export const Login = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: '100vh' }}
     >
       {content}
     </Grid>

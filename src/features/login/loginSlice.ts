@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 import { RootState } from '../../app/store';
 import { checkWallet, connectWallet } from './loginAPI';
 
@@ -33,21 +33,15 @@ const initialState: LoginState = {
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
-export const checkWalletAsync = createAsyncThunk<string[], void, { state: RootState }>(
-  'login/check',
-  async () => {
-    const response = await checkWallet();
-    return response.data;
-  }
-);
+export const checkWalletAsync = createAsyncThunk<string[], void, { state: RootState }>('login/check', async () => {
+  const response = await checkWallet();
+  return response.data;
+});
 
-export const connectWalletAsync = createAsyncThunk<string[], void, { state: RootState }>(
-  'login/connect',
-  async () => {
-    const response = await connectWallet();
-    return response.data;
-  }
-);
+export const connectWalletAsync = createAsyncThunk<string[], void, { state: RootState }>('login/connect', async () => {
+  const response = await connectWallet();
+  return response.data;
+});
 
 export const loginSlice = createSlice({
   name: 'counter',
@@ -67,7 +61,7 @@ export const loginSlice = createSlice({
       })
       .addCase(checkWalletAsync.fulfilled, (state, action) => {
         state.accounts = action.payload;
-        if(action.payload.length) state.activeAccount = action.payload[0];
+        if (action.payload.length) state.activeAccount = action.payload[0];
         state.isLoading = false;
       })
       .addCase(connectWalletAsync.pending, (state) => {
@@ -75,7 +69,7 @@ export const loginSlice = createSlice({
       })
       .addCase(connectWalletAsync.fulfilled, (state, action) => {
         state.accounts = action.payload;
-        if(action.payload.length) state.activeAccount = action.payload[0];
+        if (action.payload.length) state.activeAccount = action.payload[0];
         state.isConnecting = false;
       });
   },

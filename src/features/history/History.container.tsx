@@ -1,21 +1,11 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  List,
-  Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { LoadingContent } from "../../components/LoadingContent";
-import { selectActiveAccount } from "../login/loginSlice";
-import {
-  getHistoryAsync,
-  selectHistoryLoading,
-  selectTransactions,
-} from "./historySlice";
-import { TransactionItem } from "./TransactionItem.component";
+import { Accordion, AccordionDetails, AccordionSummary, List, Typography } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { LoadingContent } from '../../components/LoadingContent';
+import { selectActiveAccount } from '../login/loginSlice';
+import { getHistoryAsync, selectHistoryLoading, selectTransactions } from './historySlice';
+import { TransactionItem } from './TransactionItem.component';
 
 export const History = () => {
   const dispatch = useAppDispatch();
@@ -32,7 +22,7 @@ export const History = () => {
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">History</Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{ overflow: "auto", maxHeight: "70vh" }}>
+      <AccordionDetails sx={{ overflow: 'auto', maxHeight: '70vh' }}>
         <LoadingContent isLoading={isHistoryLoading}>
           <List>
             {transactions.map((transaction) => (

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 import { RootState } from '../../app/store';
 import { getHistory } from './historyAPI';
 
@@ -13,13 +13,10 @@ const initialState: HistoryState = {
   areTransactionsLoading: true,
 };
 
-export const getHistoryAsync = createAsyncThunk(
-  'history/get',
-  async (selectedAccount: string) => {
-    const response = await getHistory(selectedAccount);
-    return response.data;
-  }
-);
+export const getHistoryAsync = createAsyncThunk('history/get', async (selectedAccount: string) => {
+  const response = await getHistory(selectedAccount);
+  return response.data;
+});
 
 export const assetsSlice = createSlice({
   name: 'history',
@@ -33,7 +30,7 @@ export const assetsSlice = createSlice({
       .addCase(getHistoryAsync.fulfilled, (state, action) => {
         state.transactions = action.payload.reverse();
         state.areTransactionsLoading = false;
-      })
+      });
   },
 });
 

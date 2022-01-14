@@ -3,5 +3,5 @@
     "**/node_modules/": true,
     "**/dist/": true
   },
-  "debug.javascript.unmapMissingSources": true,
+  "debug.javascript.unmapMissingSources": true
 }

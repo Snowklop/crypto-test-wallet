@@ -1,4 +1,3 @@
-
 // see https://docs.etherscan.io/api-endpoints/accounts#get-a-list-of-erc20-token-transfer-events-by-address
 export interface TokenTransaction {
   blockNumber: string;
@@ -37,12 +36,12 @@ export interface TokenAssets {
 
 export enum EtherscanStatus {
   SUCCESS = '1',
-  FAILED = '0'
+  FAILED = '0',
 }
 
 export enum EtherscanMessage {
   OK = 'OK',
   NOT_OK = 'NOTOK',
   EMPTY = 'No transactions found',
-  WRONG_API_KEY = 'OK-Missing/Invalid API Key, rate limit of 1/5sec applied'
+  WRONG_API_KEY = 'OK-Missing/Invalid API Key, rate limit of 1/5sec applied',
 }
