@@ -12,8 +12,7 @@ export const LoadingContent = ({
   <>
     {isLoading ? (
       <Grid
-        container
-        spacing={0}
+        container spacing={0}
         direction="column"
         alignItems="center"
         justifyContent="center"
